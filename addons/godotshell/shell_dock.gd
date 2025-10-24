@@ -14,7 +14,6 @@ func print_error(txt: String):
 	shell_rich_text_label.append_text("[color={0}]{1}[/color]\n".format([err_color.to_html(false), txt]))
 
 func execute_command(cmd: String) -> void:
-	print_output("> {0}".format([cmd]))
 	assert(bash != null)
 	bash.send_command(cmd)
 
