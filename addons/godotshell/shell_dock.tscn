@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd805lvbbq5b5"]
+
+[ext_resource type="Script" uid="uid://d0l6jmi3jx4gu" path="res://addons/godotshell/shell_dock.gd" id="1_iocih"]
+
+[node name="ShellDock" type="Control"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iocih")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShellRichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+scroll_following = true
+
+[node name="CommandLineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+keep_editing_on_text_submit = true
+
+[connection signal="text_submitted" from="VBoxContainer/CommandLineEdit" to="." method="_on_command_line_edit_text_submitted"]
