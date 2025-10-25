@@ -14,7 +14,9 @@ func _init(out_callback: Callable = Callable(), err_callback: Callable = Callabl
 	self.out_callback = out_callback
 	self.err_callback = err_callback
 	
-	_pipe = Pipe.new(OS.execute_with_pipe("script", ["--quiet", "--return", "--command", "bash -i", "/dev/null"], false))
+	#_pipe = Pipe.new(OS.execute_with_pipe("script", ["--quiet", "--return", "--command", "bash", "/dev/null"], false))
+	#_pipe = Pipe.new(OS.execute_with_pipe("stdbuf", ["-oL", "-eL", "bash", "-i"], false))
+	_pipe = Pipe.new(OS.execute_with_pipe("bash", ["-i"], false))
 	_pipe.stdio.store_line("export TERM=xterm-256color")
 	_pipe.stdio.store_line("source ~/.bashrc")
 	_thread.start(_bash_process.bind(_pipe))
@@ -37,6 +39,7 @@ func _process_stderr(pipe: Pipe) -> void:
 	var line: String = pipe.stderr.get_line()
 	if line.is_empty():
 		return
+	print(line)
 	print_result.call_deferred(line, err_callback)
 
 func print_result(txt: String, callback: Callable) -> void:
@@ -64,3 +67,4 @@ func kill() -> void:
 
 func send_command(cmd: String) -> void:
 	_pipe.stdio.store_line(cmd)
+	_pipe.stdio.flush()
