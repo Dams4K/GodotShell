@@ -14,7 +14,9 @@ func _init(out_callback: Callable = Callable(), err_callback: Callable = Callabl
 	self.out_callback = out_callback
 	self.err_callback = err_callback
 	
-	_pipe = Pipe.new(OS.execute_with_pipe("script", ["--quiet", "--return", "--command", "bash", "/dev/null"], false))
+	_pipe = Pipe.new(OS.execute_with_pipe("script", ["--quiet", "--return", "--command", "bash -i", "/dev/null"], false))
+	_pipe.stdio.store_line("export TERM=xterm-256color")
+	_pipe.stdio.store_line("source ~/.bashrc")
 	_thread.start(_bash_process.bind(_pipe))
 
 func _bash_process(pipe: Pipe) -> void:
