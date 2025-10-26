@@ -1,1 +1,0 @@
-addons	file.txt  icon.svg  icon.svg.import  project.godot
