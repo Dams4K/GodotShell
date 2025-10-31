@@ -1,0 +1,5 @@
+]0;development@dams-fedora:~/Documents/Programmation/Godot4/Projects/GodotShell/demo/addons/godotshell]666;vte.shell.postexec=0\]666;vte.shell.precmd!\]7;file://dams-fedora/home/development/Documents/Programmation/Godot4/Projects/GodotShell/demo/addons/godotshell\[?2004h]133;D;0\]133;A\[0m[1m[32mdevelopment@dams-fedora[0m:[1m[32m~/Documents/Programmation/Godot4/Projects/GodotShell/demo/addons/godotshell[0m$ ]133;B\ls
+[?2004l]133;C\]666;vte.shell.preexec!\bash.gd      godotshell.gd      pipe.gd      shell_dock.gd      [0m[01;32mshellpty[0m
+bash.gd.uid  godotshell.gd.uid  pipe.gd.uid  shell_dock.gd.uid
+[01;34mconverter[0m    out.txt            plugin.cfg   shell_dock.tscn
+]0;development@dams-fedora:~/Documents/Programmation/Godot4/Projects/GodotShell/demo/addons/godotshell]666;vte.shell.postexec=0\]666;vte.shell.precmd!\]7;file://dams-fedora/home/development/Documents/Programmation/Godot4/Projects/GodotShell/demo/addons/godotshell\[?2004h]133;D;0\]133;A\[0m[1m[32mdevelopment@dams-fedora[0m:[1m[32m~/Documents/Programmation/Godot4/Projects/GodotShell/demo/addons/godotshell[0m$ ]133;B\
